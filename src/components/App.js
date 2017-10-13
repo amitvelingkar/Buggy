@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import base, {auth, googleProvider} from './base';
+import base, {auth, googleProvider} from '../base';
 
-import Messages from './components/Messages';
-import './App.css';
+import Messages from './Messages';
+import '../css/App.css';
 
 class App extends Component {
   constructor(props) {

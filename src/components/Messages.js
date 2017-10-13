@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import AddMessageForm from './AddMessageForm';
 
 class Messages extends React.Component {
@@ -11,7 +12,9 @@ class Messages extends React.Component {
         return (
           <div className="message-edit" key={key}>
             <div>{message.username || 'Anonymous'}: {message.text}</div>
-            <button onClick={() => this.props.removeMessage(key)}>Remove</button>
+            {message.author === this.props.user.email ?
+                <button onClick={() => this.props.removeMessage(key)}>Remove</button> : null
+            }
           </div>
         )
     }
@@ -27,13 +30,16 @@ class Messages extends React.Component {
             </div>
           )
     }
-    static propTypes = {
-        messages: React.PropTypes.object.isRequired,
-        removeMessage: React.PropTypes.func.isRequired,
-        addMessage: React.PropTypes.func.isRequired,
-        user: React.PropTypes.object.isRequired
-    };
+}
 
+Messages.propTypes = {
+    messages: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.object),
+        PropTypes.object
+    ]).isRequired,
+    removeMessage: PropTypes.func.isRequired,
+    addMessage: PropTypes.func.isRequired,
+    user: PropTypes.object.isRequired
 }
 
 export default Messages;

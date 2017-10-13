@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class AddMessageForm extends React.Component {
     createMessage(e) {
@@ -25,8 +26,8 @@ class AddMessageForm extends React.Component {
 }
 
 AddMessageForm.propTypes = {
-    addMessage: React.PropTypes.func.isRequired,
-    user: React.PropTypes.object.isRequired
+    addMessage: PropTypes.func.isRequired,
+    user: PropTypes.object.isRequired
 }
 
 export default AddMessageForm;

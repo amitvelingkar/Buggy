@@ -5,6 +5,7 @@
   "dependencies": {
     "firebase": "^4.5.1",
     "promise-polyfill": "6.0.2",
+    "prop-types": "^15.6.0",
     "re-base": "^3.0.5",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

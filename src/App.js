@@ -23,7 +23,7 @@ class App extends Component {
     // persist auth across sessions
     auth.onAuthStateChanged((user) => {
       if(user) {
-        this.authHandler({ user });
+        this.authHandler(user);
       }
     });
     
@@ -46,8 +46,6 @@ class App extends Component {
   authenticate(type) {
     // TODO - choose provider based on type, right now choosing Google only
     console.log(`Trying to log in with ${type}`);
-    googleProvider.addScope('profile');
-    googleProvider.addScope('email');
     auth.signInWithPopup(googleProvider)
       .then((result) => {
         this.authHandler(result.user);

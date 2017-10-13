@@ -18,6 +18,15 @@
   font-size: large;
 }
 
+.message-edit {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.user-profile img {
+  height: 60px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

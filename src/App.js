@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import base, {auth, googleProvider} from './base';
 
 import Messages from './components/Messages';
-
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -86,7 +84,7 @@ class App extends Component {
         {this.state.user ?
           <div>
             <div className='user-profile'>
-              <img src={this.state.user.photoURL} />
+              <img src={this.state.user.photoURL} alt={this.state.user.displayName}/>
             </div>
             <Messages
               addMessage={this.addMessage}

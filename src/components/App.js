@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import base, {auth, googleProvider} from '../base';
 
+import Header from './Header';
 import Messages from './Messages';
 import '../css/App.css';
 
@@ -71,21 +72,13 @@ class App extends Component {
   render() {
     return (
       <div className='app'>
-        <header>
-          <div className="wrapper">
-            <h1>Messaging App</h1>
-            {this.state.user ?
-              <button onClick={this.logout}>Logout</button>                
-            :
-              <button onClick={() => this.authenticate('google')}>Log In</button>              
-            }
-          </div>
-        </header>
+        <Header
+          logout={this.logout}
+          authenticate={this.authenticate}
+          user={this.state.user}
+        />
         {this.state.user ?
           <div>
-            <div className='user-profile'>
-              <img src={this.state.user.photoURL} alt={this.state.user.displayName}/>
-            </div>
             <Messages
               addMessage={this.addMessage}
               removeMessage={this.removeMessage}

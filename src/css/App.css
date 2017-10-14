@@ -23,8 +23,27 @@
   margin-bottom: 10px;
 }
 
+.header {
+  display: flex;
+  background: #7B1FA2;
+  color: #FAFAFA;
+  justify-content: space-between;
+}
+
+.header-left .title {
+  font-size: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+}
+
+.header-right {
+  align-items: center;
+  display: flex;
+}
+
 .user-profile img {
-  height: 60px;
+  height: 32px;
 }
 
 @keyframes App-logo-spin {
